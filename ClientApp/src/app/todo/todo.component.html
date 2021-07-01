@@ -1,0 +1,34 @@
+<h1>To do</h1>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nombre</label>
+    <input type="text" class="form-control" placeholder="Introducir Descripción" [(ngModel)]="data.nombre" name="nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Descripción</label>
+    <input type="text" class="form-control" placeholder="Introducir Descripción" [(ngModel)]="data.descripcion" name="description">
+  </div>
+  <div class="add">
+    <button type="button" class="btn btn-primary" (click)="addOneTodo(data)">{{cambio}}</button>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col" colspan="2">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of lists; index as i;">
+      <th scope="row">{{list.id}}</th>
+      <td>{{list.nombre}}</td>
+      <td>{{list.descripcion}}</td>
+      <td><button class="btn btn-success" (click)="update(list)">Editar</button></td>
+      <td><button class="btn btn-warning" (click)="deleteOneTodo(list.id)">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

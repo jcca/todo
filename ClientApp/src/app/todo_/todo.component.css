@@ -1,0 +1,6 @@
+.add {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
